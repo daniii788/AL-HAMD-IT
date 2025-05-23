@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL HAMD IT - Attendance</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../images/logo.png" alt="AL HAMD IT Logo">
+            <h2>AL HAMD IT</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li class="active"><a href="attendance.html">Attendance</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+                <li><a href="salary.html">Salary Reports</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Attendance Management</h1>
+            <div class="user-info">
+                <span>Welcome, Principal</span>
+            </div>
+        </header>
+        <div class="attendance-controls">
+            <div class="date-selector">
+                <label for="attendanceDate">Select Date:</label>
+                <input type="date" id="attendanceDate">
+                <button id="loadAttendance" class="btn">Load</button>
+            </div>
+            <button id="exportAttendance" class="btn">Export to Excel</button>
+        </div>
+        <div class="attendance-table">
+            <table id="teacherAttendance">
+                <thead>
+                    <tr>
+                        <th>Teacher ID</th>
+                        <th>Name</th>
+                        <th>Check-in Time</th>
+                        <th>Check-out Time</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/auth.js"></script>
+    <script src="../js/attendance.js"></script>
+</body>
+</html>
