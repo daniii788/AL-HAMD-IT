@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL HAMD IT - Salary Reports</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../images/logo.png" alt="AL HAMD IT Logo">
+            <h2>AL HAMD IT</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="teachers.html">Teachers</a></li>
+                <li class="active"><a href="salary.html">Salary Reports</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Salary Reports</h1>
+            <div class="user-info">
+                <span>Welcome, Principal</span>
+            </div>
+        </header>
+        <div class="salary-controls">
+            <div class="month-selector">
+                <label for="salaryMonth">Select Month:</label>
+                <input type="month" id="salaryMonth">
+                <button id="loadSalary" class="btn">Load</button>
+            </div>
+            <button id="generateAllSalary" class="btn">Generate All Salary Slips</button>
+        </div>
+        <div class="salary-table">
+            <table id="salaryReport">
+                <thead>
+                    <tr>
+                        <th>Teacher ID</th>
+                        <th>Name</th>
+                        <th>Basic Salary</th>
+                        <th>Working Days</th>
+                        <th>Present Days</th>
+                        <th>Absent Days</th>
+                        <th>Deductions</th>
+                        <th>Net Salary</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Salary Slip Modal -->
+    <div id="salarySlipModal" class="modal">
+        <div class="modal-content salary-slip">
+            <span class="close">&times;</span>
+            <div class="slip-header">
+                <img src="../images/logo.png" alt="School Logo">
+                <div>
+                    <h2>AL HAMD IT SCHOOL</h2>
+                    <p>Teacher Salary Slip</p>
+                </div>
+            </div>
+            <div class="slip-info">
+                <div>
+                    <p><strong>Teacher ID:</strong> <span id="slipTeacherId"></span></p>
+                    <p><strong>Name:</strong> <span id="slipTeacherName"></span></p>
+                    <p><strong>Month:</strong> <span id="slipMonth"></span></p>
+                </div>
+                <div>
+                    <p><strong>Issue Date:</strong> <span id="slipIssueDate"></span></p>
+                </div>
+            </div>
+            <table class="slip-details">
+                <tr>
+                    <th>Description</th>
+                    <th>Amount (PKR)</th>
+                </tr>
+                <tr>
+                    <td>Basic Salary</td>
+                    <td id="slipBasicSalary"></td>
+                </tr>
+                <tr>
+                    <td>Working Days</td>
+                    <td id="slipWorkingDays"></td>
+                </tr>
+                <tr>
+                    <td>Present Days</td>
+                    <td id="slipPresentDays"></td>
+                </tr>
+                <tr>
+                    <td>Absent Days</td>
+                    <td id="slipAbsentDays"></td>
+                </tr>
+                <tr>
+                    <td>Deductions (Absent Days)</td>
+                    <td id="slipDeductions"></td>
+                </tr>
+                <tr class="total">
+                    <td><strong>Net Salary</strong></td>
+                    <td id="slipNetSalary"><strong></strong></td>
+                </tr>
+            </table>
+            <div class="slip-footer">
+                <div class="signature">
+                    <p>_________________________</p>
+                    <p>Principal's Signature</p>
+                </div>
+                <button id="printSlip" class="btn">Print Slip</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/auth.js"></script>
+    <script src="../js/salary.js"></script>
+</body>
+</html>
