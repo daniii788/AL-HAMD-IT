@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AL HAMD IT - Teachers</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="../images/logo.png" alt="AL HAMD IT Logo">
+            <h2>AL HAMD IT</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li class="active"><a href="teachers.html">Teachers</a></li>
+                <li><a href="salary.html">Salary Reports</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Teacher Management</h1>
+            <div class="user-info">
+                <span>Welcome, Principal</span>
+            </div>
+        </header>
+        <div class="teacher-controls">
+            <button id="addTeacherBtn" class="btn">Add New Teacher</button>
+            <div class="search-teacher">
+                <input type="text" id="searchTeacher" placeholder="Search teacher...">
+                <button id="searchTeacherBtn" class="btn">Search</button>
+            </div>
+        </div>
+        <div class="teachers-table">
+            <table id="teacherList">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Salary</th>
+                        <th>Joining Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Filled by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add/Edit Teacher Modal -->
+    <div id="teacherModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Add New Teacher</h2>
+            <form id="teacherForm">
+                <input type="hidden" id="teacherId">
+                <div class="form-group">
+                    <label for="teacherName">Full Name</label>
+                    <input type="text" id="teacherName" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacherContact">Contact Number</label>
+                    <input type="text" id="teacherContact" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacherEmail">Email</label>
+                    <input type="email" id="teacherEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacherSalary">Monthly Salary (PKR)</label>
+                    <input type="number" id="teacherSalary" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacherJoiningDate">Joining Date</label>
+                    <input type="date" id="teacherJoiningDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacherAddress">Address</label>
+                    <textarea id="teacherAddress" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="teacherQualifications">Qualifications</label>
+                    <textarea id="teacherQualifications" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn">Save Teacher</button>
+            </form>
+        </div>
+    </div>
+    <script src="../js/auth.js"></script>
+    <script src="../js/teachers.js"></script>
+</body>
+</html>
